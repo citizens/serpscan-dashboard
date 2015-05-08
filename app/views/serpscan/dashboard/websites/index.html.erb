@@ -1,0 +1,16 @@
+<h1>SERP Scan</h1>
+
+<table data-toggle="table" data-pagination="true" data-page-size="50" data-sort-name="url" data-sort-order="desc" data-toolbar="#create-keyword" data-search="true" class="table-striped">
+  <thead>
+    <tr>
+      <th data-field="url" data-sortable="true">URL</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @websites.each do |website| %>
+    <tr>
+      <td><%= link_to website.url, serpscan_dashboard.website_path(website.id) %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

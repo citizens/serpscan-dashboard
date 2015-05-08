@@ -1,0 +1,159 @@
+<style>
+.fader {
+  opacity: 0;
+  display: none;
+  -webkit-transition: opacity 0.15s linear;
+  -moz-transition: opacity 0.15s linear;
+  -o-transition: opacity 0.15s linear;
+  transition: opacity 0.15s linear;
+}
+.fader.in {
+  opacity: 1;
+  display: block;
+}
+</style>
+
+<h1><%= @website.url %></h1>
+<% if flash[:success] %><div class="bg-success fader in" style="padding:5px 5px"><h5><%= flash[:success] %></h5></div><% end %>
+<% if flash[:error] %><div class="bg-warning fader in" style="padding:5px 5px"><h5><%= flash[:error] %></h5></div><% end %>
+
+<div>
+  <table id="table"  data-pagination="true" data-page-size="50" data-sort-name="name" data-sort-order="desc" data-toolbar="#create-keyword" data-show-refresh="false" data-show-columns="true" data-search="true" class="table-striped">
+    <thead>
+      <tr>
+        <th></th>
+        <% @attributes.each do |attribute| %>
+        <th data-field="<%= attribute %>" data-sortable="true"><%= attribute.to_s.humanize %></th>
+        <% end %>
+      </tr>
+    </thead>
+    <tbody>
+      <% @keywords.each do |keyword| %>
+      <tr data-index="<%= keyword.id %>">
+
+        <td class="bs-checkbox" data-index="<%= keyword.id %>"><input data-index='' data-id="<%= keyword.id %>" name="keyword" type="checkbox"></td>
+
+
+        <% @attributes.each do |attribute| %>
+        <td><%= keyword.send(attribute) %></td>
+        <% end %>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+</div>
+
+
+
+<script>
+$( document ).ready(function() {
+
+$(document).on('change', 'input:checkbox', function() {
+    if($('input[type="checkbox"][name="keyword"]:checked').val()) {
+      $('#delete-keyword-button').attr('disabled', false);
+    } else {
+      $('#delete-keyword-button').attr('disabled', true);
+    }
+});
+
+$('#refresh-button').on('click', function(){
+  window.location.reload();
+})
+
+
+$(function () {
+  $('#table').bootstrapTable({
+// data: data
+});
+});
+
+function hideAlert() {
+  $(".fader.in").removeClass("in");
+}
+
+window.setTimeout(function () {
+  hideAlert();
+}, 5000);
+
+
+function selectedIds() {
+  return $('input[type="checkbox"][name="keyword"]:checked').map(function(){
+      return $(this).data('id');
+    }).get();
+}
+
+function deleteURL(){
+  return '/serpscan/keywords/delete?ids=' + selectedIds()
+}
+
+$('#confirm-delete').on('show.bs.modal', function(e) {
+
+
+  var deleteLink = $(e.relatedTarget).data('href') + '?ids=' + selectedIds;
+  $(document).find('#confirm-delete .btn-ok').attr('href', deleteLink);
+});
+
+$('#confirm-delete .btn-ok').on('click', function(){
+    $(document).find('#confirm-delete .btn-ok').attr('href', deleteURL);
+});
+});
+
+</script>
+
+
+<div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="exampleModalLabel">Delete selected keywords?</h4>
+      </div>
+      <div class="modal-body">
+        All ranking history will be lost.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        <a class="btn btn-danger btn-ok">Delete</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="create-keyword">
+  <button type="button" class="btn btn-default" data-toggle="modal" data-target="#exampleModal">
+    <i class="glyphicon glyphicon-plus"></i>
+  </button>
+
+  <button type="button" class="btn btn-default" id="delete-keyword-button" data-toggle="modal" data-target="#confirm-delete" disabled>
+    <i class="glyphicon glyphicon-minus"></i>
+  </button>
+
+  <button type="button" class="btn btn-default" id="refresh-button">
+    <i class="glyphicon glyphicon-refresh"></i>
+  </button>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="exampleModalLabel">New Keyword</h4>
+      </div>
+      <div class="modal-body">
+
+        <form class="form-inline" action="/serpscan/<%= @website.id %>/keyword" method="post" id="create-keyword" >
+          <input type="text" class="form-control" name="keyword" placeholder="Keyword" style="width:100%">
+
+
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary">Create</button>
+        </div>
+      </form>
+    </div>
+
+  </div>
+</div>
