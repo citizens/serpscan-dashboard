@@ -2,7 +2,7 @@
 
 ##### [SERP Scan](https://serpscan.com) tracks your website's search engine position for the keywords that matter to you.
 
-The serpscan-dashboard gem is a Rails Engine for managing your SERP Scan account and rankings. Before you can use the gem you'll need a SERP Scan account (https://serpscan.com), and an api key which can be found on the accounts page. 
+The **serpscan-dashboard** gem is a Rails Engine for managing your keywords and viewing your rankings. Before you can use the gem you'll need a SERP Scan account (https://serpscan.com), and an api key which can be found on the accounts page. 
 
 ## Installation
 
