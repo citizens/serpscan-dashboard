@@ -9,12 +9,13 @@ RSpec.describe "serpscan/dashboard/websites/show", type: :view do
     'month_change' => '333', 
     'alltime_change' => '444'
   )}
+  let(:search_engines) { [] }
 
   it "displays website keywords" do
     @attributes = [:phrase, :current_rank, :day_change, :month_change, :alltime_change]
     @website = website 
     @keywords = [keyword]
-
+    @search_engines = search_engines
     render
 
     expect(rendered).to match /example.com/
