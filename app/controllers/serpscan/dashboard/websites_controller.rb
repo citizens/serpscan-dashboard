@@ -15,6 +15,7 @@ module Serpscan
         @website = Serpscan::Website.find(params[:id])
         @keywords = @website.keywords
         @attributes = [:phrase, :current_rank, :day_change, :month_change, :alltime_change]
+        @search_engines = Serpscan::SearchEngine.all
       end
     end
   end

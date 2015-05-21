@@ -11,6 +11,19 @@
   opacity: 1;
   display: block;
 }
+
+.select2-container {
+  display: block;
+  width:90px;
+}
+
+.form-inline input {
+  padding: 10px;
+}
+
+.select2-selection--multiple {
+  height: 75px;
+}
 </style>
 
 <h1><%= @website.url %></h1>
@@ -49,54 +62,57 @@
 <script>
 $( document ).ready(function() {
 
-$(document).on('change', 'input:checkbox', function() {
+  $(document).on('change', 'input:checkbox', function() {
     if($('input[type="checkbox"][name="keyword"]:checked').val()) {
       $('#delete-keyword-button').attr('disabled', false);
     } else {
       $('#delete-keyword-button').attr('disabled', true);
     }
-});
+  });
 
-$('#refresh-button').on('click', function(){
-  window.location.reload();
-})
+  $('#refresh-button').on('click', function(){
+    window.location.reload();
+  })
 
 
-$(function () {
-  $('#table').bootstrapTable({
+  $(function () {
+    $('#table').bootstrapTable({
 // data: data
 });
-});
+  });
 
-function hideAlert() {
-  $(".fader.in").removeClass("in");
-}
+  function hideAlert() {
+    $(".fader.in").removeClass("in");
+  }
 
-window.setTimeout(function () {
-  hideAlert();
-}, 5000);
+  window.setTimeout(function () {
+    hideAlert();
+  }, 5000);
 
 
-function selectedIds() {
-  return $('input[type="checkbox"][name="keyword"]:checked').map(function(){
+  function selectedIds() {
+    return $('input[type="checkbox"][name="keyword"]:checked').map(function(){
       return $(this).data('id');
     }).get();
-}
+  }
 
-function deleteURL(){
-  return '/serpscan/keywords/delete?ids=' + selectedIds()
-}
+  function deleteURL(){
+    return '/serpscan/keywords/delete?ids=' + selectedIds()
+  }
 
-$('#confirm-delete').on('show.bs.modal', function(e) {
+  $('#confirm-delete').on('show.bs.modal', function(e) {
 
 
-  var deleteLink = $(e.relatedTarget).data('href') + '?ids=' + selectedIds;
-  $(document).find('#confirm-delete .btn-ok').attr('href', deleteLink);
-});
+    var deleteLink = $(e.relatedTarget).data('href') + '?ids=' + selectedIds;
+    $(document).find('#confirm-delete .btn-ok').attr('href', deleteLink);
+  });
 
-$('#confirm-delete .btn-ok').on('click', function(){
+  $('#confirm-delete .btn-ok').on('click', function(){
     $(document).find('#confirm-delete .btn-ok').attr('href', deleteURL);
-});
+  });
+
+  $(".js-example-basic-multiple").select2();
+
 });
 
 </script>
@@ -143,9 +159,19 @@ $('#confirm-delete .btn-ok').on('click', function(){
       <div class="modal-body">
 
         <form class="form-inline" action="/serpscan/<%= @website.id %>/keyword" method="post" id="create-keyword" >
+          <label for="keyword" class="control-label">Keyword:</label>
           <input type="text" class="form-control" name="keyword" placeholder="Keyword" style="width:100%">
 
-
+          <label for="search_engines" class="control-label">Search Engines:</label><br/>
+          <select class="js-example-basic-multiple search_engines" multiple="multiple" name="search_engines">
+            <% @search_engines.each do |search_engine| %>
+              <optgroup label="<%= search_engine.title %>">
+                <% search_engine.countries.each do |country| %>
+                  <option value="<%= country.id %>" <% if country.default %>selected="selected"<% end %>><%= "#{search_engine.title} | #{country.location}" %></option>
+                <% end %>
+              </optgroup>
+            <% end %>
+          </select>
 
         </div>
         <div class="modal-footer">
