@@ -1,6 +1,6 @@
 module Serpscan
   module Dashboard
-    class KeywordsController < ActionController::Base
+    class KeywordsController < DashboardController
 
       def create
         @website = Serpscan::Website.find(params[:id])

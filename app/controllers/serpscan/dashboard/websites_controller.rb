@@ -1,6 +1,6 @@
 module Serpscan
   module Dashboard
-    class WebsitesController < ActionController::Base
+    class WebsitesController < DashboardController
       layout 'serpscan/dashboard'
       
       def index
