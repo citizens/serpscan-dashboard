@@ -29,6 +29,10 @@
   float: right;
   margin-top: 25px;
 }
+
+label {
+  display: none;
+}
 </style>
 
 <h1><%= @website.url %></h1>
@@ -49,7 +53,7 @@
       <% @keywords.each do |keyword| %>
       <tr data-index="<%= keyword.id %>">
 
-        <td class="bs-checkbox" data-index="<%= keyword.id %>"><input data-index='' data-id="<%= keyword.id %>" name="keyword" type="checkbox"></td>
+        <td class="bs-checkbox" data-index="<%= keyword.id %>"><label for="keyword_<%= keyword.id %>"><%= keyword.phrase %></label><input data-index='' data-id="<%= keyword.id %>" name="keyword" type="checkbox" id="keyword_<%= keyword.id %>"></td>
 
 
         <% @attributes.each do |attribute| %>
@@ -161,11 +165,12 @@ $( document ).ready(function() {
 </div>
 
 <div id="create-keyword">
-  <button type="button" class="btn btn-default" data-toggle="modal" data-target="#exampleModal">
+  <button type="button" class="btn btn-default" data-toggle="modal" data-target="#new_keyword_modal" id='new_keyword'>
     <i class="glyphicon glyphicon-plus"></i>
-  </button>
+  </button> 
 
-  <button type="button" class="btn btn-default" id="delete-keyword-button" data-toggle="modal" data-target="#confirm-delete" disabled>
+  <label for="delete-keyword-button">Delete Selected Keywords</label>
+  <button type="button" class="btn btn-default" id="delete-keyword-button" data-toggle="modal" data-target="#confirm-delete">
     <i class="glyphicon glyphicon-minus"></i>
   </button>
 
@@ -174,7 +179,7 @@ $( document ).ready(function() {
   </button>
 </div>
 
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="new_keyword_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">

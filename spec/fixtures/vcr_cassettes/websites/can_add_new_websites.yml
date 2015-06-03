@@ -1,0 +1,363 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://127.0.0.1:59756/__identify__
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.1.2/2014-05-08)
+      Date:
+      - Wed, 03 Jun 2015 00:00:04 GMT
+      Content-Length:
+      - '14'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '70318031982960'
+    http_version: 
+  recorded_at: Wed, 03 Jun 2015 00:00:04 GMT
+- request:
+    method: get
+    uri: https://serpscan.com/api/v2/websites?token=6PR3keWxb7xYTvJ--F_R90UQYD9OpEsG53_MI9-4jDojWu9ESOhOsQ
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"e2412c1ffbfb6b53a82a9daf665b2c1a"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - c7a8086f-adb3-44aa-bb88-9f90910ff815
+      X-Runtime:
+      - '0.053339'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.2.2/2015-04-13)
+      Date:
+      - Wed, 03 Jun 2015 00:00:05 GMT
+      Content-Length:
+      - '14'
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"results":[]}'
+    http_version: 
+  recorded_at: Wed, 03 Jun 2015 00:00:05 GMT
+- request:
+    method: post
+    uri: https://serpscan.com/api/v2/websites?token=6PR3keWxb7xYTvJ--F_R90UQYD9OpEsG53_MI9-4jDojWu9ESOhOsQ&website%5Burl%5D=example.com
+    body:
+      encoding: UTF-8
+      string: '{"website":{"url":"example.com"}}'
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '33'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 201
+      message: 'Created '
+    headers:
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"60b00e3ecf17d942190bf97801451a1b"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 13aa0db6-10f5-411a-b081-4533a16f3a53
+      X-Runtime:
+      - '0.091899'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.2.2/2015-04-13)
+      Date:
+      - Wed, 03 Jun 2015 00:00:06 GMT
+      Content-Length:
+      - '31'
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"id":5203,"url":"example.com"}'
+    http_version: 
+  recorded_at: Wed, 03 Jun 2015 00:00:06 GMT
+- request:
+    method: get
+    uri: https://serpscan.com/api/v2/websites?token=6PR3keWxb7xYTvJ--F_R90UQYD9OpEsG53_MI9-4jDojWu9ESOhOsQ
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"c83619fc587331d6c545a0696cf61e57"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - b21b49e7-eeba-42d8-86a4-6602aa91d53d
+      X-Runtime:
+      - '0.011894'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.2.2/2015-04-13)
+      Date:
+      - Wed, 03 Jun 2015 00:00:06 GMT
+      Content-Length:
+      - '45'
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"results":[{"id":5203,"url":"example.com"}]}'
+    http_version: 
+  recorded_at: Wed, 03 Jun 2015 00:00:06 GMT
+- request:
+    method: get
+    uri: https://serpscan.com/api/v2/websites/5203?token=6PR3keWxb7xYTvJ--F_R90UQYD9OpEsG53_MI9-4jDojWu9ESOhOsQ
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"60b00e3ecf17d942190bf97801451a1b"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 3e108a77-f861-4937-bca1-32571a9f1e35
+      X-Runtime:
+      - '0.014310'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.2.2/2015-04-13)
+      Date:
+      - Wed, 03 Jun 2015 00:00:07 GMT
+      Content-Length:
+      - '31'
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"id":5203,"url":"example.com"}'
+    http_version: 
+  recorded_at: Wed, 03 Jun 2015 00:00:06 GMT
+- request:
+    method: get
+    uri: https://serpscan.com/api/v2/websites/5203/keywords?token=6PR3keWxb7xYTvJ--F_R90UQYD9OpEsG53_MI9-4jDojWu9ESOhOsQ
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"06f10ff554fb996daaf99fa251af5279"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 499a1284-9431-4223-84fc-633a14fbdd81
+      X-Runtime:
+      - '0.018435'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.2.2/2015-04-13)
+      Date:
+      - Wed, 03 Jun 2015 00:00:07 GMT
+      Content-Length:
+      - '59'
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"website_id":"5203","page":1,"total_pages":1,"results":[]}'
+    http_version: 
+  recorded_at: Wed, 03 Jun 2015 00:00:07 GMT
+- request:
+    method: get
+    uri: https://serpscan.com/api/v2/search_engines?token=6PR3keWxb7xYTvJ--F_R90UQYD9OpEsG53_MI9-4jDojWu9ESOhOsQ
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"dc54a59e61bc1b527441a80751128792"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - b687b837-6750-40c0-8b10-f5d3bfd221d6
+      X-Runtime:
+      - '0.740696'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.2.2/2015-04-13)
+      Date:
+      - Wed, 03 Jun 2015 00:00:08 GMT
+      Content-Length:
+      - '12085'
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"results":[{"id":1,"title":"Google","countries":[{"id":156,"location":"Afghanistan","search_engine_id":1,"default":false},{"id":157,"location":"Algeria","search_engine_id":1,"default":false},{"id":158,"location":"American
+        Samoa","search_engine_id":1,"default":false},{"id":159,"location":"Andorra","search_engine_id":1,"default":false},{"id":160,"location":"Angola","search_engine_id":1,"default":false},{"id":161,"location":"Anguilla","search_engine_id":1,"default":false},{"id":162,"location":"Antigua
+        and Barbuda","search_engine_id":1,"default":false},{"id":163,"location":"Argentina","search_engine_id":1,"default":false},{"id":164,"location":"Armenia","search_engine_id":1,"default":false},{"id":165,"location":"Australia","search_engine_id":1,"default":false},{"id":166,"location":"Austria","search_engine_id":1,"default":false},{"id":167,"location":"Azerbaijan","search_engine_id":1,"default":false},{"id":168,"location":"Bahamas","search_engine_id":1,"default":false},{"id":169,"location":"Bahrain","search_engine_id":1,"default":false},{"id":170,"location":"Bangladesh","search_engine_id":1,"default":false},{"id":171,"location":"Belarus","search_engine_id":1,"default":false},{"id":172,"location":"Belgium","search_engine_id":1,"default":false},{"id":173,"location":"Belize","search_engine_id":1,"default":false},{"id":174,"location":"Benin","search_engine_id":1,"default":false},{"id":175,"location":"Bolivia","search_engine_id":1,"default":false},{"id":176,"location":"Bosnia
+        and Herzegovina","search_engine_id":1,"default":false},{"id":177,"location":"Botswana","search_engine_id":1,"default":false},{"id":178,"location":"Brazil","search_engine_id":1,"default":false},{"id":179,"location":"British
+        Indian Ocean Territory","search_engine_id":1,"default":false},{"id":180,"location":"Brunei","search_engine_id":1,"default":false},{"id":181,"location":"Bulgaria","search_engine_id":1,"default":false},{"id":182,"location":"Burkina
+        Faso","search_engine_id":1,"default":false},{"id":183,"location":"Burundi","search_engine_id":1,"default":false},{"id":184,"location":"Cambodia","search_engine_id":1,"default":false},{"id":185,"location":"Cameroon","search_engine_id":1,"default":false},{"id":186,"location":"Canada","search_engine_id":1,"default":false},{"id":187,"location":"Cape
+        Verde","search_engine_id":1,"default":false},{"id":188,"location":"Central
+        African Republic","search_engine_id":1,"default":false},{"id":189,"location":"Chad","search_engine_id":1,"default":false},{"id":190,"location":"Chile","search_engine_id":1,"default":false},{"id":191,"location":"China","search_engine_id":1,"default":false},{"id":192,"location":"Cocos
+        (Keeling) Islands","search_engine_id":1,"default":false},{"id":193,"location":"Colombia","search_engine_id":1,"default":false},{"id":194,"location":"Cook
+        Islands","search_engine_id":1,"default":false},{"id":195,"location":"Costa
+        Rica","search_engine_id":1,"default":false},{"id":196,"location":"Croatia","search_engine_id":1,"default":false},{"id":197,"location":"Cyprus","search_engine_id":1,"default":false},{"id":198,"location":"Czech
+        Republic","search_engine_id":1,"default":false},{"id":199,"location":"Democratic
+        Republic of the Congo","search_engine_id":1,"default":false},{"id":200,"location":"Denmark","search_engine_id":1,"default":false},{"id":201,"location":"Djibouti","search_engine_id":1,"default":false},{"id":202,"location":"Dominica","search_engine_id":1,"default":false},{"id":203,"location":"Dominican
+        Republic","search_engine_id":1,"default":false},{"id":204,"location":"Ecuador","search_engine_id":1,"default":false},{"id":205,"location":"Egypt","search_engine_id":1,"default":false},{"id":206,"location":"El
+        Salvador","search_engine_id":1,"default":false},{"id":207,"location":"Estonia","search_engine_id":1,"default":false},{"id":208,"location":"Ethiopia","search_engine_id":1,"default":false},{"id":209,"location":"Federated
+        States of Micronesia","search_engine_id":1,"default":false},{"id":210,"location":"Fiji","search_engine_id":1,"default":false},{"id":211,"location":"Finland","search_engine_id":1,"default":false},{"id":212,"location":"France","search_engine_id":1,"default":false},{"id":213,"location":"French
+        Guiana","search_engine_id":1,"default":false},{"id":214,"location":"Gabon","search_engine_id":1,"default":false},{"id":215,"location":"Gambia","search_engine_id":1,"default":false},{"id":216,"location":"Georgia","search_engine_id":1,"default":false},{"id":217,"location":"Germany","search_engine_id":1,"default":false},{"id":218,"location":"Ghana","search_engine_id":1,"default":false},{"id":219,"location":"Gibraltar","search_engine_id":1,"default":false},{"id":220,"location":"Greece","search_engine_id":1,"default":false},{"id":221,"location":"Greenland","search_engine_id":1,"default":false},{"id":222,"location":"Grenada","search_engine_id":1,"default":false},{"id":223,"location":"Guadeloupe","search_engine_id":1,"default":false},{"id":224,"location":"Guatemala","search_engine_id":1,"default":false},{"id":225,"location":"Guyana","search_engine_id":1,"default":false},{"id":226,"location":"Haiti","search_engine_id":1,"default":false},{"id":227,"location":"Honduras","search_engine_id":1,"default":false},{"id":228,"location":"Hong
+        Kong","search_engine_id":1,"default":false},{"id":229,"location":"Hungary","search_engine_id":1,"default":false},{"id":230,"location":"Iceland","search_engine_id":1,"default":false},{"id":231,"location":"India","search_engine_id":1,"default":false},{"id":232,"location":"Indonesia","search_engine_id":1,"default":false},{"id":233,"location":"Iraq","search_engine_id":1,"default":false},{"id":234,"location":"Ireland","search_engine_id":1,"default":false},{"id":235,"location":"Israel","search_engine_id":1,"default":false},{"id":236,"location":"Italy","search_engine_id":1,"default":false},{"id":237,"location":"Jamaica","search_engine_id":1,"default":false},{"id":238,"location":"Japan","search_engine_id":1,"default":false},{"id":239,"location":"Jordan","search_engine_id":1,"default":false},{"id":240,"location":"Kazakhstan","search_engine_id":1,"default":false},{"id":241,"location":"Kenya","search_engine_id":1,"default":false},{"id":242,"location":"Kiribati","search_engine_id":1,"default":false},{"id":243,"location":"Kuwait","search_engine_id":1,"default":false},{"id":244,"location":"Kyrgyzstan","search_engine_id":1,"default":false},{"id":245,"location":"Laos","search_engine_id":1,"default":false},{"id":246,"location":"Latvia","search_engine_id":1,"default":false},{"id":247,"location":"Lebanon","search_engine_id":1,"default":false},{"id":248,"location":"Lesotho","search_engine_id":1,"default":false},{"id":249,"location":"Libya","search_engine_id":1,"default":false},{"id":250,"location":"Liechtenstein","search_engine_id":1,"default":false},{"id":251,"location":"Lithuania","search_engine_id":1,"default":false},{"id":252,"location":"Luxembourg","search_engine_id":1,"default":false},{"id":253,"location":"Macedonia","search_engine_id":1,"default":false},{"id":254,"location":"Madagascar","search_engine_id":1,"default":false},{"id":255,"location":"Malawi","search_engine_id":1,"default":false},{"id":256,"location":"Malaysia","search_engine_id":1,"default":false},{"id":257,"location":"Maldives","search_engine_id":1,"default":false},{"id":258,"location":"Mali","search_engine_id":1,"default":false},{"id":259,"location":"Malta","search_engine_id":1,"default":false},{"id":260,"location":"Mauritius","search_engine_id":1,"default":false},{"id":261,"location":"Mexico","search_engine_id":1,"default":false},{"id":262,"location":"Moldova","search_engine_id":1,"default":false},{"id":263,"location":"Mongolia","search_engine_id":1,"default":false},{"id":264,"location":"Montserrat","search_engine_id":1,"default":false},{"id":265,"location":"Morocco","search_engine_id":1,"default":false},{"id":266,"location":"Mozambique","search_engine_id":1,"default":false},{"id":267,"location":"Namibia","search_engine_id":1,"default":false},{"id":268,"location":"Nauru","search_engine_id":1,"default":false},{"id":269,"location":"Nepal","search_engine_id":1,"default":false},{"id":270,"location":"Netherlands","search_engine_id":1,"default":false},{"id":271,"location":"New
+        Zealand","search_engine_id":1,"default":false},{"id":272,"location":"Nicaragua","search_engine_id":1,"default":false},{"id":273,"location":"Niger","search_engine_id":1,"default":false},{"id":274,"location":"Nigeria","search_engine_id":1,"default":false},{"id":275,"location":"Niue","search_engine_id":1,"default":false},{"id":276,"location":"Norfolk
+        Island","search_engine_id":1,"default":false},{"id":277,"location":"Norway","search_engine_id":1,"default":false},{"id":278,"location":"Oman","search_engine_id":1,"default":false},{"id":279,"location":"Pakistan","search_engine_id":1,"default":false},{"id":280,"location":"Palestinian
+        territories","search_engine_id":1,"default":false},{"id":281,"location":"Panama","search_engine_id":1,"default":false},{"id":282,"location":"Paraguay","search_engine_id":1,"default":false},{"id":283,"location":"Peru","search_engine_id":1,"default":false},{"id":284,"location":"Philippines","search_engine_id":1,"default":false},{"id":285,"location":"Pitcairn
+        Islands","search_engine_id":1,"default":false},{"id":286,"location":"Poland","search_engine_id":1,"default":false},{"id":287,"location":"Portugal","search_engine_id":1,"default":false},{"id":288,"location":"Puerto
+        Rico","search_engine_id":1,"default":false},{"id":289,"location":"Qatar","search_engine_id":1,"default":false},{"id":290,"location":"Romania","search_engine_id":1,"default":false},{"id":291,"location":"Russia","search_engine_id":1,"default":false},{"id":292,"location":"Rwanda","search_engine_id":1,"default":false},{"id":293,"location":"Saint
+        Vincent and the Grenadines","search_engine_id":1,"default":false},{"id":294,"location":"Trinidad
+        and Tobago","search_engine_id":1,"default":false},{"id":295,"location":"Tunisia","search_engine_id":1,"default":false},{"id":296,"location":"Turkey","search_engine_id":1,"default":false},{"id":297,"location":"Turkmenistan","search_engine_id":1,"default":false},{"id":298,"location":"Uganda","search_engine_id":1,"default":false},{"id":299,"location":"Ukraine","search_engine_id":1,"default":false},{"id":300,"location":"United
+        Arab Emirates","search_engine_id":1,"default":false},{"id":301,"location":"United
+        Kingdom","search_engine_id":1,"default":false},{"id":302,"location":"United
+        States","search_engine_id":1,"default":true},{"id":303,"location":"Uruguay","search_engine_id":1,"default":false},{"id":304,"location":"Uzbekistan","search_engine_id":1,"default":false},{"id":305,"location":"Vanuatu","search_engine_id":1,"default":false},{"id":306,"location":"Venezuela","search_engine_id":1,"default":false},{"id":307,"location":"Vietnam","search_engine_id":1,"default":false},{"id":308,"location":"Vietnam","search_engine_id":1,"default":false},{"id":309,"location":"Zimbabwe","search_engine_id":1,"default":false},{"id":311,"location":"Spain","search_engine_id":1,"default":false},{"id":312,"location":"Slovakia","search_engine_id":1,"default":false},{"id":314,"location":"Thailand","search_engine_id":1,"default":false},{"id":316,"location":"South
+        Africa","search_engine_id":1,"default":false},{"id":467,"location":"United
+        States | Mobile","search_engine_id":1,"default":false},{"id":468,"location":"United
+        Kingdom | Mobile","search_engine_id":1,"default":false},{"id":771,"location":"Switzerland","search_engine_id":1,"default":false}]},{"id":2,"title":"Bing","countries":[{"id":310,"location":"United
+        States","search_engine_id":2,"default":false}]},{"id":3,"title":"Seznam","countries":[{"id":313,"location":"CZ","search_engine_id":3,"default":false}]},{"id":4,"title":"Yahoo","countries":[{"id":315,"location":"United
+        States","search_engine_id":4,"default":false},{"id":413,"location":"Japan","search_engine_id":4,"default":false},{"id":636,"location":"Australia","search_engine_id":4,"default":false}]},{"id":5,"title":"YouTube","countries":[{"id":586,"location":"United
+        States","search_engine_id":5,"default":false}]}]}'
+    http_version: 
+  recorded_at: Wed, 03 Jun 2015 00:00:08 GMT
+recorded_with: VCR 2.9.3
