@@ -41,3 +41,5 @@ TestApp::Application.configure do
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 end
+
+Serpscan.api_key = '6PR3keWxb7xYTvJ--F_R90UQYD9OpEsG53_MI9-4jDojWu9ESOhOsQ'
