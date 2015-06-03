@@ -8,4 +8,10 @@ RSpec.describe "serpscan/dashboard/websites/index", type: :view do
     render
     expect(rendered).to match /example.com/
   end
+
+  it "has add website form" do
+    @websites = []
+    render
+    expect(rendered).to have_content 'New Website'
+  end
 end

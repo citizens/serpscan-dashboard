@@ -24,6 +24,11 @@
 .select2-selection--multiple {
   height: 75px;
 }
+
+.delete-website {
+  float: right;
+  margin-top: 25px;
+}
 </style>
 
 <h1><%= @website.url %></h1>
@@ -54,6 +59,9 @@
       <% end %>
     </tbody>
   </table>
+
+  <button type="button" class="btn btn-danger delete-website" id="delete-website-button" data-toggle="modal" data-target="#confirm-website-delete">Delete Website
+  </button>
 </div>
 </div>
 
@@ -135,6 +143,23 @@ $( document ).ready(function() {
   </div>
 </div>
 
+<div class="modal fade" id="confirm-website-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="exampleModalLabel">Delete website and all keywords?</h4>
+      </div>
+      <div class="modal-body">
+        All keywords and ranking history will be lost.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        <a href="/serpscan/websites/<%= @website.id %>/delete" class="btn btn-danger btn-ok">Delete</a>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div id="create-keyword">
   <button type="button" class="btn btn-default" data-toggle="modal" data-target="#exampleModal">
     <i class="glyphicon glyphicon-plus"></i>
@@ -180,6 +205,5 @@ $( document ).ready(function() {
         </div>
       </form>
     </div>
-
   </div>
 </div>

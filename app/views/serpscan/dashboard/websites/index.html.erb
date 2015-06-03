@@ -1,5 +1,9 @@
 <h1>SERP Scan</h1>
 
+  <button type="button" class="btn btn-default" data-toggle="modal" data-target="#new_website_modal" id="new_website">
+    <i class="glyphicon glyphicon-plus"></i>
+  </button>
+
 <table data-toggle="table" data-pagination="true" data-page-size="50" data-sort-name="url" data-sort-order="desc" data-toolbar="#create-keyword" data-search="true" class="table-striped">
   <thead>
     <tr>
@@ -14,3 +18,29 @@
     <% end %>
   </tbody>
 </table>
+
+
+<div class="modal fade" id="new_website_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="exampleModalLabel">New Website</h4>
+      </div>
+      <div class="modal-body">
+
+        <form class="form-inline" action="/serpscan/website" method="post" id="create-website" >
+          <label for="url" class="control-label">URL:</label>
+          <input type="text" class="form-control" name="url" placeholder="example.com" style="width:100%">
+
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary">Create</button>
+        </div>
+      </form>
+    </div>
+
+  </div>
+</div>
