@@ -17,7 +17,4 @@ Gem::Specification.new do |s|
 
   s.add_dependency "rails", "> 4.0.0"
   s.add_dependency "serpscan", "~> 0.1.4"
-
-  s.add_development_dependency 'rspec-rails'
-  s.add_development_dependency 'sqlite3'
 end

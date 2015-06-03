@@ -13,3 +13,11 @@ gemspec
 # To use a debugger
 # gem 'byebug', group: [:development, :test]
 
+group :test do
+  gem 'rspec-rails'
+  gem 'capybara'
+  gem 'capybara-webkit'
+  gem 'webmock'
+  gem 'vcr'
+  gem 'sqlite3'
+end
