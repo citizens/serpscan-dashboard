@@ -49,3 +49,6 @@ To make the engine accessible only to authenticated users
 
 ## Viewing the dashboard
 Simply visit `/serpscan` 
+
+## Preview
+![Screenshot](/../screenshots/screenshots/example1.png?raw=true "Screenshot")
